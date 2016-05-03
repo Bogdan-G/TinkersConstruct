@@ -12,7 +12,7 @@ ehthumbs.db
 Thumbs.db
 #gradle stuff
 /.gradle
-/build/
+#/build/
 /run*/
 /ui/
 gradle-app.setting
@@ -38,3 +38,4 @@ version.properties
 options.txt
 /saves/
 /out
+/.nb-gradle/

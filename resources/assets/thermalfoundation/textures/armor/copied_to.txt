@@ -1,0 +1,2 @@
+assets/tinker/textures/armor
+

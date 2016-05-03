@@ -322,6 +322,11 @@ item.tconstruct.chestplateWood.name=Wooden Chestplate
 item.tconstruct.leggingsWood.name=Wooden Leggings
 item.tconstruct.bootsWood.name=Wooden Boots
 
+item.tconstruct.helmetBronze.name=Bronze Helmet
+item.tconstruct.chestplateBronze.name=Bronze Chestplate
+item.tconstruct.leggingsBronze.name=Bronze Leggings
+item.tconstruct.bootsBronze.name=Bronze Boots
+
 item.tconstruct.travelgoggles.name=Traveller's Goggles
 item.tconstruct.travelvest.name=Traveller's Vest
 item.tconstruct.travelwings.name=Traveller's Wings

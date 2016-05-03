@@ -62,6 +62,13 @@ public class TinkerArmor
     public static Item leggingsWood;
     public static Item bootsWood;
     public static ArmorMaterial materialWood;
+    
+    // Armor - bronze
+    public static Item helmetBronze;
+    public static Item chestplateBronze;
+    public static Item leggingsBronze;
+    public static Item bootsBronze;
+    public static ArmorMaterial materialBronze;
 
     //Clothing - Travel Gear
     public static TravelGear travelGoggles;
@@ -111,6 +118,8 @@ public class TinkerArmor
         GameRegistry.registerItem(TinkerArmor.knapsack, "knapsack");
 
         LiquidCasting basinCasting = TConstruct.getBasinCasting();
+        
+        
         TinkerArmor.materialWood = EnumHelper.addArmorMaterial("WOOD", 2, new int[] { 1, 2, 2, 1 }, 3);
         TinkerArmor.helmetWood = new ArmorBasic(TinkerArmor.materialWood, 0, "wood").setUnlocalizedName("tconstruct.helmetWood");
         TinkerArmor.chestplateWood = new ArmorBasic(TinkerArmor.materialWood, 1, "wood").setUnlocalizedName("tconstruct.chestplateWood");
@@ -120,6 +129,19 @@ public class TinkerArmor
         GameRegistry.registerItem(TinkerArmor.chestplateWood, "chestplateWood");
         GameRegistry.registerItem(TinkerArmor.leggingsWood, "leggingsWood");
         GameRegistry.registerItem(TinkerArmor.bootsWood, "bootsWood");
+        
+        TinkerArmor.materialBronze = EnumHelper.addArmorMaterial("BRONZE", 5, new int[] { 2, 6, 5, 2 }, 3);
+        TinkerArmor.helmetBronze = new ArmorBasic(TinkerArmor.materialBronze, 0, "bronze").setUnlocalizedName("tconstruct.helmetBronze");
+        TinkerArmor.chestplateBronze = new ArmorBasic(TinkerArmor.materialBronze, 1, "bronze").setUnlocalizedName("tconstruct.chestplateBronze");
+        TinkerArmor.leggingsBronze = new ArmorBasic(TinkerArmor.materialBronze, 2, "bronze").setUnlocalizedName("tconstruct.leggingsBronze");
+        TinkerArmor.bootsBronze = new ArmorBasic(TinkerArmor.materialBronze, 3, "bronze").setUnlocalizedName("tconstruct.bootsBronze");
+        GameRegistry.registerItem(TinkerArmor.helmetBronze, "helmetBronze");
+        GameRegistry.registerItem(TinkerArmor.chestplateBronze, "chestplateBronze");
+        GameRegistry.registerItem(TinkerArmor.leggingsBronze, "leggingsBronze");
+        GameRegistry.registerItem(TinkerArmor.bootsBronze, "bootsBronze");
+        
+        
+        
         TConstructRegistry.addItemStackToDirectory("diamondApple", new ItemStack(TinkerArmor.diamondApple, 1, 0));
 
         TConstructRegistry.addItemStackToDirectory("canisterEmpty", new ItemStack(TinkerArmor.heartCanister, 1, 0));
@@ -168,6 +190,11 @@ public class TinkerArmor
         GameRegistry.addRecipe(new ShapedOreRecipe(TinkerArmor.chestplateWood, chest, 'w', "logWood"));
         GameRegistry.addRecipe(new ShapedOreRecipe(TinkerArmor.leggingsWood, pants, 'w', "logWood"));
         GameRegistry.addRecipe(new ShapedOreRecipe(TinkerArmor.bootsWood, shoes, 'w', "logWood"));
+        
+        GameRegistry.addRecipe(new ShapedOreRecipe(TinkerArmor.helmetBronze, helm, 'w', "ingotBronze"));
+        GameRegistry.addRecipe(new ShapedOreRecipe(TinkerArmor.chestplateBronze, chest, 'w', "ingotBronze"));
+        GameRegistry.addRecipe(new ShapedOreRecipe(TinkerArmor.leggingsBronze, pants, 'w', "ingotBronze"));
+        GameRegistry.addRecipe(new ShapedOreRecipe(TinkerArmor.bootsBronze, shoes, 'w', "ingotBronze"));
 
         // Accessories
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TinkerArmor.heartCanister, 1, 0), "##", "##", '#', "ingotAluminum"));
