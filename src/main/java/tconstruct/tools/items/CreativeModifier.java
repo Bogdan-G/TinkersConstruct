@@ -57,7 +57,7 @@ public class CreativeModifier extends Item
         {
             String targetLock = "None";
             targetLock = stack.getTagCompound().getString("TargetLock");
-            targetLock = StatCollector.translateToLocal("infitool." + targetLock.toLowerCase());
+            targetLock = StatCollector.translateToLocal("infitool." + targetLock.toLowerCase(java.util.Locale.ENGLISH));
             list.add(StatCollector.translateToLocal("creativeModLock.tooltip") + targetLock);
         }
     }

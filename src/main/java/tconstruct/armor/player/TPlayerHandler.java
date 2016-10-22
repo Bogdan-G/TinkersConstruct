@@ -82,7 +82,7 @@ public class TPlayerHandler
                 }
             }
 
-            if (player.getDisplayName().toLowerCase().equals("fractuality"))
+            if (player.getDisplayName().toLowerCase(java.util.Locale.ENGLISH).equals("fractuality"))
             {
                 ItemStack pattern = new ItemStack(TinkerTools.woodPattern, 1, 22);
 
@@ -98,7 +98,7 @@ public class TPlayerHandler
                 AbilityHelper.spawnItemAtPlayer(player, pattern);
             }
 
-            if (player.getDisplayName().toLowerCase().equals("zerokyuuni"))
+            if (player.getDisplayName().toLowerCase(java.util.Locale.ENGLISH).equals("zerokyuuni"))
             {
                 ItemStack pattern = new ItemStack(Items.stick);
 
@@ -112,7 +112,7 @@ public class TPlayerHandler
 
                 AbilityHelper.spawnItemAtPlayer(player, pattern);
             }
-            if (player.getDisplayName().toLowerCase().equals("zisteau"))
+            if (player.getDisplayName().toLowerCase(java.util.Locale.ENGLISH).equals("zisteau"))
             {
                 spawnPigmanModifier(player);
             }
@@ -158,7 +158,7 @@ public class TPlayerHandler
 
                 AbilityHelper.spawnItemAtPlayer(player, modifier);
 
-                if (player.getDisplayName().toLowerCase().equals("zisteau"))
+                if (player.getDisplayName().toLowerCase(java.util.Locale.ENGLISH).equals("zisteau"))
                 {
                     spawnPigmanModifier(player);
                 }

@@ -21,6 +21,6 @@ public class ThrowingKnifeEntity extends ProjectileBase {
 
     @Override
     protected double getStuckDepth() {
-        return 0.3d + TinkerWeaponry.random.nextDouble();
+        return 0.3d + TinkerWeaponry.random.nextFloat();
     }
 }

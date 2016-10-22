@@ -74,48 +74,53 @@ public class SurfaceOreGen extends WorldGenerator
 
         float f = random.nextFloat() * (float) Math.PI;
         int blockNumber = numberOfBlocks;
-        if (alterSize)
-            blockNumber = numberOfBlocks * 2 / 5 + random.nextInt(numberOfBlocks * 3 / 5);
-        double d0 = (double) ((float) (startX + 8) + MathHelper.sin(f) * (float) blockNumber / 8.0F);
-        double d1 = (double) ((float) (startX + 8) - MathHelper.sin(f) * (float) blockNumber / 8.0F);
-        double d2 = (double) ((float) (startZ + 8) + MathHelper.cos(f) * (float) blockNumber / 8.0F);
-        double d3 = (double) ((float) (startZ + 8) - MathHelper.cos(f) * (float) blockNumber / 8.0F);
-        double d4 = (double) (startY + random.nextInt(3) - 2);
-        double d5 = (double) (startY + random.nextInt(3) - 2);
+        if (alterSize) blockNumber = numberOfBlocks * 2 / 5 + random.nextInt(numberOfBlocks * 3 / 5);
+        float msin = MathHelper.sin(f);
+        float mcos = (float) Math.sqrt(1-msin*msin);
+        float bn8 = (float) blockNumber / 8.0F;
+        float d0 =  ((float) (startX + 8) + msin * bn8);
+        float d1 =  ((float) (startX + 8) - msin * bn8);
+        float d2 =  ((float) (startZ + 8) + mcos * bn8);
+        float d3 =  ((float) (startZ + 8) - mcos * bn8);
+        float d4 =  (startY + random.nextInt(3) - 2);
+        float d5 =  (startY + random.nextInt(3) - 2);
+        float mpibn = (float) Math.PI / (float) blockNumber;
 
         for (int l = 0; l <= blockNumber; ++l)
         {
-            double d6 = d0 + (d1 - d0) * (double) l / (double) blockNumber;
-            double d7 = d4 + (d5 - d4) * (double) l / (double) blockNumber;
-            double d8 = d2 + (d3 - d2) * (double) l / (double) blockNumber;
-            double d9 = random.nextDouble() * (double) blockNumber / 16.0D;
-            double d10 = (double) (MathHelper.sin((float) l * (float) Math.PI / (float) blockNumber) + 1.0F) * d9 + 1.0D;
-            double d11 = (double) (MathHelper.sin((float) l * (float) Math.PI / (float) blockNumber) + 1.0F) * d9 + 1.0D;
-            int i1 = MathHelper.floor_double(d6 - d10 / 2.0D);
-            int j1 = MathHelper.floor_double(d7 - d11 / 2.0D);
-            int k1 = MathHelper.floor_double(d8 - d10 / 2.0D);
-            int l1 = MathHelper.floor_double(d6 + d10 / 2.0D);
-            int i2 = MathHelper.floor_double(d7 + d11 / 2.0D);
-            int j2 = MathHelper.floor_double(d8 + d10 / 2.0D);
+            float lbn = (float) l / (float) blockNumber;
+            float d6 = d0 + (d1 - d0) * lbn;
+            float d7 = d4 + (d5 - d4) * lbn;
+            float d8 = d2 + (d3 - d2) * lbn;
+            float d9 = random.nextFloat() * bn8 / 2.0f;
+            float d10 = (MathHelper.sin((float) l * mpibn) + 1.0F) * d9 + 1.0f;
+            //float d11 = (float) (MathHelper.sin((float) l * (float) Math.PI / (float) blockNumber) + 1.0F) * d9 + 1.0f;
+            float d102f = d10 / 2.0f;
+            int i1 = MathHelper.floor_float(d6 - d102f);
+            int j1 = MathHelper.floor_float(d7 - d102f);
+            int k1 = MathHelper.floor_float(d8 - d102f);
+            int l1 = MathHelper.floor_float(d6 + d102f);
+            int i2 = MathHelper.floor_float(d7 + d102f);
+            int j2 = MathHelper.floor_float(d8 + d102f);
 
             for (int k2 = i1; k2 <= l1; ++k2)
             {
-                double d12 = ((double) k2 + 0.5D - d6) / (d10 / 2.0D);
+                float d12 = ((float) k2 + 0.5f - d6) / (d102f);
 
-                if (d12 * d12 < 1.0D)
+                if (d12 * d12 < 1.0f)
                 {
                     for (int l2 = j1; l2 <= i2; ++l2)
                     {
-                        double d13 = ((double) l2 + 0.5D - d7) / (d11 / 2.0D);
+                        float d13 = ((float) l2 + 0.5f - d7) / (d102f);
 
-                        if (d12 * d12 + d13 * d13 < 1.0D)
+                        if (d12 * d12 + d13 * d13 < 1.0f)
                         {
                             for (int i3 = k1; i3 <= j2; ++i3)
                             {
-                                double d14 = ((double) i3 + 0.5D - d8) / (d10 / 2.0D);
+                                float d14 = ((float) i3 + 0.5f - d8) / (d102f);
 
                                 Block block = world.getBlock(k2, l2, i3);
-                                if (d12 * d12 + d13 * d13 + d14 * d14 < 1.0D)
+                                if (d12 * d12 + d13 * d13 + d14 * d14 < 1.0f)
                                 {
                                     if (block == null || !world.getBlock(k2, l2, i3).isOpaqueCube())
                                         world.setBlock(k2, l2, i3, this.minableBlock, minableBlockMeta, 2);

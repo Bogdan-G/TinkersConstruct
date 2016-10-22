@@ -378,7 +378,7 @@ public class WeaponryHandler {
             // golden carrot must be named banana
             if(!event.headStack.hasTagCompound() || !event.headStack.getTagCompound().hasKey("display") ||
                     !event.headStack.getTagCompound().getCompoundTag("display").hasKey("Name") ||
-                    !event.headStack.getTagCompound().getCompoundTag("display").getString("Name").toLowerCase().equals("banana"))
+                    !event.headStack.getTagCompound().getCompoundTag("display").getString("Name").toLowerCase(java.util.Locale.ENGLISH).equals("banana"))
                 return;
             event.name = '\u2400' + "Bonæna"; // the \u2400 is a non-printable unicode character so you can't just type it
             event.headStack = new ItemStack(TinkerTools.swordBlade, 1, TinkerTools.MaterialID.Bone);

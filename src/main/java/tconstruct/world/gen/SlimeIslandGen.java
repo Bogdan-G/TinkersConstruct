@@ -23,7 +23,7 @@ public class SlimeIslandGen extends WorldGenerator implements IWorldGenerator
     private Block liquidBlock;
     private int gelMeta;
     int randomness = 2;
-    Random random = new Random();
+    Random random = new org.bogdang.modifications.random.XSTR();
     Block base = TinkerTools.craftedSoil;// Block.dirt.blockID;
     Block top = TinkerWorld.slimeGrass;
     SlimeTreeGen trees = new SlimeTreeGen(false, 5, 4, 1, 0);
@@ -180,12 +180,12 @@ public class SlimeIslandGen extends WorldGenerator implements IWorldGenerator
 
         for (xPos = 0; xPos < var7; ++xPos)
         {
-            double noise1 = rand.nextDouble() * 6.0D + 3.0D;
-            double noise2 = rand.nextDouble() * 4.0D + 2.0D;
-            double noise3 = rand.nextDouble() * 6.0D + 3.0D;
-            double noise4 = rand.nextDouble() * (16.0D - noise1 - 2.0D) + 1.0D + noise1 / 2.0D;
-            double noise5 = rand.nextDouble() * (8.0D - noise2 - 4.0D) + 2.0D + noise2 / 2.0D;
-            double noise6 = rand.nextDouble() * (16.0D - noise3 - 2.0D) + 1.0D + noise3 / 2.0D;
+            float noise1 = rand.nextFloat() * 6.0F + 3.0F;
+            float noise2 = rand.nextFloat() * 4.0F + 2.0F;
+            float noise3 = rand.nextFloat() * 6.0F + 3.0F;
+            float noise4 = rand.nextFloat() * (16.0F - noise1 - 2.0F) + 1.0F + noise1 / 2.0F;
+            float noise5 = rand.nextFloat() * (8.0F - noise2 - 4.0F) + 2.0F + noise2 / 2.0F;
+            float noise6 = rand.nextFloat() * (16.0F - noise3 - 2.0F) + 1.0F + noise3 / 2.0F;
 
             for (int xIter = 1; xIter < 15; ++xIter)
             {
@@ -193,12 +193,12 @@ public class SlimeIslandGen extends WorldGenerator implements IWorldGenerator
                 {
                     for (int yIter = 1; yIter < 7; ++yIter)
                     {
-                        double var24 = ((double) xIter - noise4) / (noise1 / 2.0D);
-                        double var26 = ((double) yIter - noise5) / (noise2 / 2.0D);
-                        double var28 = ((double) zIter - noise6) / (noise3 / 2.0D);
-                        double validSpot = var24 * var24 + var26 * var26 + var28 * var28;
+                        float var24 = ((float) xIter - noise4) / (noise1 / 2.0F);
+                        float var26 = ((float) yIter - noise5) / (noise2 / 2.0F);
+                        float var28 = ((float) zIter - noise6) / (noise3 / 2.0F);
+                        float validSpot = var24 * var24 + var26 * var26 + var28 * var28;
 
-                        if (validSpot < 1.0D)
+                        if (validSpot < 1.00000F)
                         {
                             validLocations[(xIter * 16 + zIter) * 8 + yIter] = true;
                         }

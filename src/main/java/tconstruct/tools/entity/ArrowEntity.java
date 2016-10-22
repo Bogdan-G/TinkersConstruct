@@ -24,7 +24,7 @@ public class ArrowEntity extends EntityArrow implements IEntityAdditionalSpawnDa
     public float mass;
     public int baseDamage;
     private float knockbackStrengthMod;
-    Random random = new Random();
+    Random random = new org.bogdang.modifications.random.XSTR();
 
     public ArrowEntity(World par1World)
     {

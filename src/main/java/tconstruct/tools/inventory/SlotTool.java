@@ -15,7 +15,7 @@ public class SlotTool extends Slot
 {
     /** The player that is using the GUI where this slot resides. */
     public EntityPlayer player;
-    Random random = new Random();
+    Random random = new org.bogdang.modifications.random.XSTR();
 
     public SlotTool(EntityPlayer entityplayer, IInventory builder, int par3, int par4, int par5)
     {

@@ -207,7 +207,7 @@ public class ArmorProxyClient extends ArmorProxyCommon {
 	private static final ResourceLocation icons = new ResourceLocation("textures/gui/icons.png");
 	// public static int left_height = 39;
 	// public static int right_height = 39;
-	Random rand = new Random();
+	Random rand = new org.bogdang.modifications.random.XSTR();
 	int updateCounter = 0;
 
 	GameSettings gs = Minecraft.getMinecraft().gameSettings;

@@ -17,9 +17,9 @@ public class BehaviorSpawnEgg extends Behavior
     public void executeLogic (World par1World, int par2, int par3, int par4, ItemStack par5ItemStack, Entity triggerer, boolean willBlockBeRemoved)
     {
         EnumFacing enumfacing = getFacing(par1World, par2, par3, par4);
-        double d0 = par2 + Math.random() + (double) enumfacing.getFrontOffsetX();
+        double d0 = par2 + (new org.bogdang.modifications.random.XSTR()).nextFloat() + (double) enumfacing.getFrontOffsetX();
         double d1 = (double) ((float) par3 + 0.2F);
-        double d2 = par4 + Math.random() + (double) enumfacing.getFrontOffsetZ();
+        double d2 = par4 + (new org.bogdang.modifications.random.XSTR()).nextFloat() + (double) enumfacing.getFrontOffsetZ();
         Entity entity = ItemMonsterPlacer.spawnCreature(par1World, par5ItemStack.getItemDamage(), d0, d1, d2);
 
         if (entity instanceof EntityLivingBase && par5ItemStack.hasDisplayName())

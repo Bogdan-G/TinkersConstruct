@@ -20,39 +20,39 @@ public class BehaviorBlockThrow extends Behavior
         for (int i = 0; i < par5ItemStack.stackSize; i++)
         {
             int direction = par1World.rand.nextInt(8);
-            double speed = 2D * Math.random() + 0.01D;
+            double speed = 2D * (new org.bogdang.modifications.random.XSTR()).nextFloat() + 0.01D;
             double upVecReduction = 0.25D;
             double randomnessFactor = 0.5D;
-            double vec0 = 0, vec1 = par1World.rand.nextDouble() * upVecReduction, vec2 = 0;
+            double vec0 = 0, vec1 = par1World.rand.nextFloat() * upVecReduction, vec2 = 0;
             switch (direction)
             {
             case 0:
-                vec0 = speed + par1World.rand.nextDouble() * randomnessFactor;
-                // vec2 = par1World.rand.nextDouble() * randomnessFactor;
+                vec0 = speed + par1World.rand.nextFloat() * randomnessFactor;
+                // vec2 = par1World.rand.nextFloat() * randomnessFactor;
                 break;
             case 1:
-                vec0 = -speed + par1World.rand.nextDouble() * randomnessFactor;
-                // vec2 = par1World.rand.nextDouble() * randomnessFactor;
+                vec0 = -speed + par1World.rand.nextFloat() * randomnessFactor;
+                // vec2 = par1World.rand.nextFloat() * randomnessFactor;
                 break;
             case 2:
-                vec2 = speed + par1World.rand.nextDouble() * randomnessFactor;
-                // vec0 = par1World.rand.nextDouble() * randomnessFactor;
+                vec2 = speed + par1World.rand.nextFloat() * randomnessFactor;
+                // vec0 = par1World.rand.nextFloat() * randomnessFactor;
                 break;
             case 3:
-                vec2 = -speed + par1World.rand.nextDouble() * randomnessFactor;
-                // vec0 = par1World.rand.nextDouble() * randomnessFactor;
+                vec2 = -speed + par1World.rand.nextFloat() * randomnessFactor;
+                // vec0 = par1World.rand.nextFloat() * randomnessFactor;
                 break;
             case 4:
-                vec0 = speed + par1World.rand.nextDouble() * randomnessFactor;
-                vec2 = speed + par1World.rand.nextDouble() * randomnessFactor;
+                vec0 = speed + par1World.rand.nextFloat() * randomnessFactor;
+                vec2 = speed + par1World.rand.nextFloat() * randomnessFactor;
                 break;
             case 5:
-                vec0 = speed + par1World.rand.nextDouble() * randomnessFactor;
-                vec2 = -speed + par1World.rand.nextDouble() * randomnessFactor;
+                vec0 = speed + par1World.rand.nextFloat() * randomnessFactor;
+                vec2 = -speed + par1World.rand.nextFloat() * randomnessFactor;
                 break;
             case 6:
-                vec0 = -speed + par1World.rand.nextDouble() * randomnessFactor;
-                vec2 = speed + par1World.rand.nextDouble() * randomnessFactor;
+                vec0 = -speed + par1World.rand.nextFloat() * randomnessFactor;
+                vec2 = speed + par1World.rand.nextFloat() * randomnessFactor;
                 break;
             case 7:
                 vec0 = -speed;

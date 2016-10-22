@@ -22,7 +22,7 @@ public class FancyItemRender extends Render
     private RenderBlocks itemRenderBlocks = new RenderBlocks();
 
     /** The RNG used in RenderItem (for bobbing itemstacks on the ground) */
-    private Random random = new Random();
+    private Random random = new org.bogdang.modifications.random.XSTR();
     public boolean renderWithColor = true;
 
     /** Defines the zLevel of rendering of item on GUI. */

@@ -45,7 +45,7 @@ public class TinkerArmorEvents
 
         if (event.entityLiving instanceof IBossDisplayData)
         {
-            String entityName = event.entityLiving.getClass().getSimpleName().toLowerCase();
+            String entityName = event.entityLiving.getClass().getSimpleName().toLowerCase(java.util.Locale.ENGLISH);
             for(String name : PHConstruct.heartDropBlacklist)
                 if (name.toLowerCase(Locale.US).equals(entityName))
                     return;

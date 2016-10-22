@@ -39,7 +39,7 @@ public class OreberryBush extends BlockLeavesBase implements IPlantable
         this.subitems = sub;
         this.oreTypes = oreTypes;
         this.setTickRandomly(true);
-        random = new Random();
+        random = new org.bogdang.modifications.random.XSTR();
         this.setHardness(0.3F);
         this.setStepSound(Block.soundTypeMetal);
         this.setCreativeTab(TConstructRegistry.blockTab);

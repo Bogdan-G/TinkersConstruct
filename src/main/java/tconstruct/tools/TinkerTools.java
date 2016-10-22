@@ -360,7 +360,7 @@ public class TinkerTools
         for (int i = 0; i < matNames.length; i++)
         {
             //TODO 1.8 remove this ore dict entry as it's outdated(use materialRod instead)
-            OreDictionary.registerOre(matNames[i].toLowerCase() + "Rod", new ItemStack(TinkerTools.toolRod, 1, i));
+            OreDictionary.registerOre(matNames[i].toLowerCase(java.util.Locale.ENGLISH) + "Rod", new ItemStack(TinkerTools.toolRod, 1, i));
             OreDictionary.registerOre("rod" + matNames[i], new ItemStack(TinkerTools.toolRod, 1, i));
         }
         OreDictionary.registerOre("thaumiumRod", new ItemStack(TinkerTools.toolRod, 1, 31));

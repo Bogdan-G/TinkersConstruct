@@ -9,7 +9,6 @@
 buildscript {
     repositories {
         mavenCentral()
-	mavenLocal()
         maven {
             name = 'ForgeFS'
             url = 'http://files.minecraftforge.net/maven'
@@ -18,6 +17,7 @@ buildscript {
             name = "sonatype"
             url = "https://oss.sonatype.org/content/repositories/snapshots/"
         }
+        mavenLocal()
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
@@ -30,10 +30,10 @@ repositories {
         name 'CB Maven FS'
         url "http://chickenbones.net/maven/"
     }
-    /*maven {
+    maven {
          name "ProfMobius Maven FS"
          url "http://mobiusstrip.eu/maven"
-    }*/
+    }
     maven {
         name 'DVS1 Maven FS'
         url 'http://dvs1.progwml6.com/files/maven'
@@ -42,6 +42,8 @@ repositories {
         name 'ForgeFS'
         url 'http://files.minecraftforge.net/maven'
     }
+    mavenCentral()
+    mavenLocal()
 }
 
 // Load ForgeGradle
@@ -69,7 +71,7 @@ dependencies {
     compile "codechicken:NotEnoughItems:${config.minecraft_version}-${config.NEI_version}:dev"
     compile "codechicken:ForgeMultipart:${config.minecraft_version}-${config.fmp_version}:dev"
     //compile "mcp.mobius.waila:Waila:${config.waila_version}:dev"
-    deployerJars 'org.apache.maven.wagon:wagon-ssh:2.2'
+    //deployerJars 'org.apache.maven.wagon:wagon-ssh:2.2'
 }
 
 // Finds and sets version data
@@ -98,6 +100,9 @@ if (System.getenv().ARTIFACT_VERSION != null) {
 }
 
 version = "${config.minecraft_version}-${artifact_version}"
+
+sourceCompatibility = 7
+targetCompatibility = 7
 
 minecraft {
     version = config.minecraft_version + "-" + config.forge_version
@@ -181,7 +186,7 @@ if (System.getenv().KSK_PW != null)
 	ext.keystore_user_password =System.getenv().KSK_PW;
 
 
-task("uploadJars", dependsOn:"build") {
+/*task("uploadJars", dependsOn:"build") {
     
     description = "uploads JARs"
 
@@ -205,6 +210,6 @@ task("uploadJars", dependsOn:"build") {
             }
         }    
     }
-}
+}*/
 
 

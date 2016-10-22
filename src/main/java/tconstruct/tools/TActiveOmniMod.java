@@ -22,7 +22,7 @@ import tconstruct.world.entity.BlueSlime;
 
 public class TActiveOmniMod extends ActiveToolMod
 {
-    Random random = new Random();
+    Random random = new org.bogdang.modifications.random.XSTR();
 
     /* Updating */
     @Override
@@ -143,7 +143,7 @@ public class TActiveOmniMod extends ActiveToolMod
                     {
                         j = MathHelper.floor_float((float) i * f);
 
-                        if (j < MathHelper.ceiling_float_int((float) i * f) && (float) Math.random() < (float) i * f - (float) j)
+                        if (j < MathHelper.ceiling_float_int((float) i * f) && (float) (new org.bogdang.modifications.random.XSTR()).nextFloat() < (float) i * f - (float) j)
                         {
                             ++j;
                         }

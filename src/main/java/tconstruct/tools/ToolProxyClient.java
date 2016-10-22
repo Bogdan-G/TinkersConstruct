@@ -419,14 +419,14 @@ public class ToolProxyClient extends ToolProxyCommon
         // tier 1 tools
         for (int i = 0; i < tier1Tools.length; i++)
         {
-            String locString = String.format("gui.toolstation.%s.desc", tier1Tools[i].getToolName().toLowerCase());
+            String locString = String.format("gui.toolstation.%s.desc", tier1Tools[i].getToolName().toLowerCase(java.util.Locale.ENGLISH));
             addToolButton(itemIconsT1[i][0], itemIconsT1[i][1], itemIconsT1[i][2], iconCoordsT1[i * 2], iconCoordsT1[i * 2 + 1], tier1Tools[i].getLocalizedToolName(), locString);
         }
 
         // tier 2 tools
         for (int i = 0; i < tier2Tools.length; i++)
         {
-            String locString = String.format("gui.toolstation.%s.desc", tier2Tools[i].getToolName().toLowerCase());
+            String locString = String.format("gui.toolstation.%s.desc", tier2Tools[i].getToolName().toLowerCase(java.util.Locale.ENGLISH));
             addTierTwoButton(itemIconsT2[i][0], itemIconsT2[i][1], itemIconsT2[i][2], iconCoordsT2[i * 2], iconCoordsT2[i * 2 + 1], tier2Tools[i].getLocalizedToolName(), locString);
         }
     }

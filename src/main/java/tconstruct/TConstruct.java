@@ -99,7 +99,7 @@ public class TConstruct
     public static final String modID = "TConstruct";
     public static final Logger logger = LogManager.getLogger(modID);
     public static final PacketPipeline packetPipeline = new PacketPipeline();
-    public static Random random = new Random();
+    public static Random random = new org.bogdang.modifications.random.XSTR();
     
 
 

@@ -100,7 +100,7 @@ public class TinkerWeaponry {
 
     // other stuff
     public static ModAttack modAttack;
-    public static Random random = new Random();
+    public static Random random = new org.bogdang.modifications.random.XSTR();
 
 
     public static Item[] patternOutputs;

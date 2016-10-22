@@ -20,7 +20,7 @@ public class ToolStationContainer extends ActiveContainer
     public ToolStationLogic logic;
     public Slot[] slots;
     public SlotTool toolSlot;
-    public Random random = new Random();
+    public Random random = new org.bogdang.modifications.random.XSTR();
 
     public ToolStationContainer(InventoryPlayer inventoryplayer, ToolStationLogic builderlogic)
     {

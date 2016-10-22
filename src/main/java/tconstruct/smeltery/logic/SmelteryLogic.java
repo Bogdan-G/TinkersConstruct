@@ -62,7 +62,7 @@ public class SmelteryLogic extends InventoryLogic implements IActiveLogic, IFaci
     public int maxLiquid;
     public int currentLiquid;
 
-    Random rand = new Random();
+    Random rand = new org.bogdang.modifications.random.XSTR();
     boolean needsUpdate;
 
     public SmelteryLogic()
@@ -602,16 +602,16 @@ public class SmelteryLogic extends InventoryLogic implements IActiveLogic, IFaci
         IFluidHandler tankContainer = (IFluidHandler) worldObj.getTileEntity(activeLavaTank.x, activeLavaTank.y, activeLavaTank.z);
 
         // get liquid from the tank
-        FluidStack liquid = tankContainer.drain(ForgeDirection.DOWN, 15, false);
+        FluidStack liquid = tankContainer.drain(ForgeDirection.DOWN, 500, false);
         if (liquid != null && Smeltery.isSmelteryFuel(liquid.getFluid())) // doublecheck that everything is ok
         {
             do {
                 // drain actual liquid, non simulated
-                liquid = tankContainer.drain(ForgeDirection.DOWN, 15, true);
+                liquid = tankContainer.drain(ForgeDirection.DOWN, 500, true);
                 // we try to do it as long as we don't have enough. Only needed for rapid-use fuels.
                 if(liquid == null || liquid.amount == 0)
                     break;
-                useTime += (int) ((float) Smeltery.getFuelDuration(liquid.getFluid()) * Math.round(15f / (float) liquid.amount));
+                useTime += (int) ((float) Smeltery.getFuelDuration(liquid.getFluid()) * Math.round(500f / (float) liquid.amount));
                 internalTemp = Smeltery.getFuelPower(liquid.getFluid());
             } while(useTime < 0);
 
@@ -628,7 +628,7 @@ public class SmelteryLogic extends InventoryLogic implements IActiveLogic, IFaci
             TileEntity tankContainer = worldObj.getTileEntity(activeLavaTank.x, activeLavaTank.y, activeLavaTank.z);
             if (tankContainer instanceof IFluidHandler)
             {
-                FluidStack liquid = ((IFluidHandler) tankContainer).drain(ForgeDirection.DOWN, 15, false);
+                FluidStack liquid = ((IFluidHandler) tankContainer).drain(ForgeDirection.DOWN, 500, false);
                 // current tank still has liquid and it's a fuel. everythin ok.
                 if (liquid != null && Smeltery.isSmelteryFuel(liquid.getFluid()))
                     return;

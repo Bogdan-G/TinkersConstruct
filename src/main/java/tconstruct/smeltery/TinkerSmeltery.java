@@ -756,7 +756,7 @@ public class TinkerSmeltery
     protected static void addRecipesForSmeltery ()
     {
         // Smeltery fuels
-        Smeltery.addSmelteryFuel(FluidRegistry.LAVA, 1300, 80); // lava lasts 4 seconds per 15 mb
+        Smeltery.addSmelteryFuel(FluidRegistry.LAVA, 1300, 40); // lava lasts 4 seconds per 15 mb // balanced for gregtech logic, need testing and more calculated?
 
         // BLOOD FOR THE BLOOD GOD
         if (TinkerWorld.meatBlock != null)

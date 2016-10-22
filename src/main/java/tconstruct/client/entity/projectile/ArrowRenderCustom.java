@@ -17,7 +17,7 @@ import tconstruct.tools.entity.ArrowEntity;
 public class ArrowRenderCustom extends Render
 {
     private static RenderItem renderer = new RenderItem();
-    private Random random = new Random();
+    private Random random = new org.bogdang.modifications.random.XSTR();
 
     public ArrowRenderCustom()
     {

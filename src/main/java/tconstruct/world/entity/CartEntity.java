@@ -120,9 +120,9 @@ public class CartEntity extends Entity implements IInventory, IEntityAdditionalS
     protected void entityInit ()
     {
         this.dataWatcher.addObject(16, new Byte((byte) 0));
-        this.dataWatcher.addObject(17, new Integer(0));
-        this.dataWatcher.addObject(18, new Integer(1));
-        this.dataWatcher.addObject(19, new Integer(0));
+        this.dataWatcher.addObject(17, Integer.valueOf(0));
+        this.dataWatcher.addObject(18, Integer.valueOf(1));
+        this.dataWatcher.addObject(19, Integer.valueOf(0));
     }
 
     /**

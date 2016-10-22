@@ -32,7 +32,7 @@ public class SmelteryBlock extends InventoryBlock
         setHardness(3F);
         setResistance(20F);
         setStepSound(soundTypeMetal);
-        rand = new Random();
+        rand = new org.bogdang.modifications.random.XSTR();
         this.setCreativeTab(TConstructRegistry.blockTab);
         this.setBlockName("tconstruct.Smeltery");
     }

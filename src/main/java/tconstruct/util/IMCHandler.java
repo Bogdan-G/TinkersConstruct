@@ -78,7 +78,7 @@ public final class IMCHandler {
 
                     // add additional render mapping so resource packs or the mods themselves can have custom textures for the tools
                     if(FMLCommonHandler.instance().getSide().isClient())
-                        TConstructClientRegistry.addMaterialRenderMapping(id, "tinker", mat.name().toLowerCase(), true);
+                        TConstructClientRegistry.addMaterialRenderMapping(id, "tinker", mat.name().toLowerCase(java.util.Locale.ENGLISH), true);
                 }
             }
             else if(type.equals("addPartBuilderMaterial"))

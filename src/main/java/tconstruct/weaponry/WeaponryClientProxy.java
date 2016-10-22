@@ -140,7 +140,7 @@ public class WeaponryClientProxy extends WeaponryCommonProxy {
 
         for (int i = 0; i < tools.length; i++)
         {
-            String locString = String.format("gui.toolstation.%s.desc", tools[i].getToolName().toLowerCase());
+            String locString = String.format("gui.toolstation.%s.desc", tools[i].getToolName().toLowerCase(java.util.Locale.ENGLISH));
             TConstructClientRegistry.addToolButton(icons[i][0], icons[i][1], icons[i][2], coords[i*2], coords[i*2+1], tools[i].getLocalizedToolName(), locString, Reference.RESOURCE, tex);
         }
 
@@ -161,7 +161,7 @@ public class WeaponryClientProxy extends WeaponryCommonProxy {
 
         for (int i = 0; i < tools.length; i++)
         {
-            String locString = String.format("gui.toolstation.%s.desc", tools[i].getToolName().toLowerCase());
+            String locString = String.format("gui.toolstation.%s.desc", tools[i].getToolName().toLowerCase(java.util.Locale.ENGLISH));
             TConstructClientRegistry.addTierTwoButton(icons[i][0], icons[i][1], icons[i][2], coords[i*2], coords[i*2+1], tools[i].getLocalizedToolName(), locString, Reference.RESOURCE, tex);
         }
     }

@@ -13,7 +13,7 @@ import net.minecraft.world.*;
 public class MiningExplosion extends Explosion
 {
     World world;
-    private Random random = new Random();
+    private Random random = new org.bogdang.modifications.random.XSTR();
     private int field_77289_h = 16;
     private Map field_77288_k = new HashMap();
 

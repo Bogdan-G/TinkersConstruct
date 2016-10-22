@@ -22,7 +22,7 @@ public class TinkerUBC
 
     private void registerBlock (int meta, String blockName)
     {
-        String overlayTexture = blockName.toLowerCase();
+        String overlayTexture = blockName.toLowerCase(java.util.Locale.ENGLISH);
         try
         {
             UBAPIHook.ubAPIHook.ubOreTexturizer.requestUBOreSetup(TinkerWorld.oreSlag, meta, "tinker:ore_" + overlayTexture + "_overlay", "MetalOre." + blockName);

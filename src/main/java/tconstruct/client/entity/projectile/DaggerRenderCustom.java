@@ -19,7 +19,7 @@ public class DaggerRenderCustom extends Render
 {
     private static RenderItem renderer = new RenderItem();
     private static ToolCoreRenderer toolCoreRenderer = new ToolCoreRenderer(true, true);
-    private Random random = new Random();
+    private Random random = new org.bogdang.modifications.random.XSTR();
 
     public DaggerRenderCustom()
     {

@@ -35,7 +35,7 @@ public class TBaseWorldGenerator implements IWorldGenerator
     {
         if (world.provider.isHellWorld)
         {
-            generateNether(random, chunkX * 16, chunkZ * 16, world);
+            if (gc || ga) generateNether(random, chunkX * 16, chunkZ * 16, world, gc, ga);
         }
         else if (world.provider.terrainType != WorldType.FLAT || PHConstruct.genOresFlat)
         {
@@ -222,11 +222,15 @@ public class TBaseWorldGenerator implements IWorldGenerator
             }
         }
     }
-
     void generateNether (Random random, int xChunk, int zChunk, World world)
     {
+        generateNether(random, xChunk, zChunk, world, gc, ga);
+    }
+
+    void generateNether (Random random, int xChunk, int zChunk, World world, boolean gc, boolean ga)
+    {
         int xPos, yPos, zPos;
-        if (PHConstruct.generateCobalt)
+        if (gc)
         {
             for (int i = 0; i < PHConstruct.cobaltDensity; i++)
             {
@@ -244,7 +248,7 @@ public class TBaseWorldGenerator implements IWorldGenerator
                 cobalt.generate(world, random, xPos, yPos, zPos);
             }
         }
-        if (PHConstruct.generateArdite)
+        if (ga)
         {
             for (int i = 0; i < PHConstruct.arditeDensity; i++)
             {
@@ -346,4 +350,7 @@ public class TBaseWorldGenerator implements IWorldGenerator
     OreberryBushGen tinBush;
     OreberryBushGen aluminumBush;
     OreberryBushGen silverBush;
+
+    boolean gc = PHConstruct.generateCobalt;
+    boolean ga = PHConstruct.generateArdite;
 }

@@ -81,7 +81,7 @@ public class DualMaterialToolPart extends DynamicToolPart {
         if(!PHConstruct.minimalTextures)
             for(Map.Entry<Integer, tconstruct.library.tools.ToolMaterial> entry : TConstructRegistry.toolMaterials.entrySet())
             {
-                String tex = modTexPrefix + ":" + folder + entry.getValue().materialName.toLowerCase() + texture + "_2";
+                String tex = modTexPrefix + ":" + folder + entry.getValue().materialName.toLowerCase(java.util.Locale.ENGLISH) + texture + "_2";
                 if(TextureHelper.itemTextureExists(tex))
                     this.icons2[entry.getKey()] = iconRegister.registerIcon(tex);
             }

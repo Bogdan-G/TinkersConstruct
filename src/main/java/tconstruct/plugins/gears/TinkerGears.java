@@ -61,10 +61,10 @@ public class TinkerGears {
             Fluid fluid = FluidRegistry.getFluid(material);
             // or lowercased
             if(fluid == null)
-                fluid = FluidRegistry.getFluid(material.toLowerCase());
+                fluid = FluidRegistry.getFluid(material.toLowerCase(java.util.Locale.ENGLISH));
             // or in the tinkers liquid format
             if(fluid == null)
-                fluid = FluidRegistry.getFluid(material.toLowerCase() + ".molten");
+                fluid = FluidRegistry.getFluid(material.toLowerCase(java.util.Locale.ENGLISH) + ".molten");
 
             // found one?
             if(fluid != null) {

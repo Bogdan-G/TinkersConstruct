@@ -55,7 +55,7 @@ import tconstruct.weaponry.TinkerWeaponry;
 })
 public abstract class ToolCore extends Item implements IEnergyContainerItem, IEqualityOverrideItem, IModifyable
 {
-    protected Random random = new Random();
+    protected Random random = new org.bogdang.modifications.random.XSTR();
     protected int damageVsEntity;
     public static IIcon blankSprite;
     public static IIcon emptyIcon;
@@ -119,7 +119,7 @@ public abstract class ToolCore extends Item implements IEnergyContainerItem, IEq
 
     public String getLocalizedToolName ()
     {
-        return StatCollector.translateToLocal("tool." + getToolName().toLowerCase());
+        return StatCollector.translateToLocal("tool." + getToolName().toLowerCase(java.util.Locale.ENGLISH));
     }
 
     /* Rendering */

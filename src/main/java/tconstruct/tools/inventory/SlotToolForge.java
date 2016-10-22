@@ -13,7 +13,7 @@ import tconstruct.library.modifier.IModifyable;
 public class SlotToolForge extends SlotTool
 {
     /** The player that is using the GUI where this slot resides. */
-    Random random = new Random();
+    Random random = new org.bogdang.modifications.random.XSTR();
 
     public SlotToolForge(EntityPlayer entityplayer, IInventory builder, int par3, int par4, int par5)
     {

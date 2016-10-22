@@ -178,7 +178,7 @@ public class DynamicToolPart extends CraftingItem implements IToolPart
         if(!PHConstruct.minimalTextures)
             for(Map.Entry<Integer, tconstruct.library.tools.ToolMaterial> entry : TConstructRegistry.toolMaterials.entrySet())
             {
-                String tex = modTexPrefix + ":" + folder + entry.getValue().materialName.toLowerCase() + texture;
+                String tex = modTexPrefix + ":" + folder + entry.getValue().materialName.toLowerCase(java.util.Locale.ENGLISH) + texture;
                 if(TextureHelper.itemTextureExists(tex))
                     this.icons[entry.getKey()] = iconRegister.registerIcon(tex);
             }

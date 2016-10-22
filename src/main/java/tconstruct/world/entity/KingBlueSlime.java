@@ -56,12 +56,12 @@ public class KingBlueSlime extends SlimeBase implements IBossDisplayData {
             for(; c > 0; c--) {
                 BlueSlime entityslime = new BlueSlime(this.worldObj);
                 entityslime.setSlimeSize(1);
-                double r = rand.nextDouble() * Math.PI;
+                double r = rand.nextFloat() * Math.PI;
                 double x = Math.cos(r);
                 double z = Math.sin(r);
                 entityslime.setLocationAndAngles(this.posX - 1d + x, this.posY + 0.5D, this.posZ - 1d + z, this.rand.nextFloat() * 360.0F, 0.0F);
                 entityslime.motionX = x;
-                entityslime.motionY = -0.5d - rand.nextDouble();
+                entityslime.motionY = -0.5d - rand.nextFloat();
                 entityslime.motionZ = z;
                 this.worldObj.spawnEntityInWorld(entityslime);
             }
@@ -81,7 +81,7 @@ public class KingBlueSlime extends SlimeBase implements IBossDisplayData {
         final ItemStack accessoryStack = tool.getAccessoryItem() != null ? new ItemStack(tool.getAccessoryItem(), 1, 17) : null;
         final ItemStack extraStack = tool.getExtraItem() != null ? new ItemStack(tool.getExtraItem(), 1, 17) : null;
 
-        String loc = "tool." + tool.getToolName().toLowerCase() + ".kingslime"; // special localization the same way as materials
+        String loc = "tool." + tool.getToolName().toLowerCase(java.util.Locale.ENGLISH) + ".kingslime"; // special localization the same way as materials
         String name;
         if(StatCollector.canTranslate(loc))
             name = StatCollector.translateToLocal(loc);
